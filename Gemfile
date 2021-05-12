@@ -29,12 +29,12 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
-
 gem 'autoprefixer-rails'
 gem 'execjs', '2.7.0'
 gem 'font-awesome-sass'
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'pry-rails'
   gem 'dotenv-rails'
 
