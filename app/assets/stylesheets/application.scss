@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  color: $brand;
+  background-color: white;
+}
+
+.container-main {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.margin-from-navbar {
+  margin-top: 32px;
+}

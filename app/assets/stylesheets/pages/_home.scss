@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.fullscreen-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.text-center {
+  justify-content: center;
+  align-items: center;
+  margin-top: -82px;
+}
+
+h1.homepage-text {
+  font-size: 400px !important;
+  font-weight: bold;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px $brand;
+  color: white;
+}
