@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   def home
   end
 
-  def works
+  def work
+    # TODO: order articles and exhibitions by date
     @articles = Article.all
     @exhibitions = Exhibition.all
   end

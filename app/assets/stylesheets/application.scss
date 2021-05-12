@@ -25,3 +25,18 @@ body {
 .margin-from-navbar {
   margin-top: 32px;
 }
+
+a, a:hover {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: $brand;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $brand;
+  opacity: 0.5;
+}

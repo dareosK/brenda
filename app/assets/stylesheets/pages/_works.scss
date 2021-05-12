@@ -1,0 +1,22 @@
+.works-grid {
+  margin-top: 32px;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 64px;
+}
+
+.works-text {
+  font-size: 110px;
+  font-weight: bold;
+  height: 40vh;
+}
+
+.container-center {
+  margin: 0 auto;
+}
+
+// .grid-writings, .grid-projects {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between
+// }
