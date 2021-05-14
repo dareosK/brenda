@@ -1,7 +1,11 @@
 class ExhibitionsController < ApplicationController
-  before_action :find_exhibition, only: [:show, :new]
+  before_action :find_exhibition, only: [:show]
+
+  def show
+  end
 
   def new
+    @exhibition = Exhibition.new
   end
 
   def create
@@ -10,9 +14,6 @@ class ExhibitionsController < ApplicationController
 
     # no need for app/views/exhibitions/create.html.erb
     redirect_to exhibition_path(@exhibition)
-  end
-
-  def show
   end
 
   def edit

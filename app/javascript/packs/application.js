@@ -18,12 +18,16 @@ require("channels")
 
 
 // ----------------------------------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
+// ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-// External imports
+// EXTERNAL IMPORTS
+// Bootstrap JS
 import "bootstrap";
+// rich text editor ActionText
+require("trix")
+require("@rails/actiontext")
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
