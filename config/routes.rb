@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'work', to: "pages#work", as: :work
   get 'about', to: "pages#about", as: :about
+  get 'dashboard', to: "pages#dashboard", as: :dashboard
 
   resources :articles, except: [:index]
   # get "articles/new", to: "articles#new" # The `new` route needs to be *before* `show` route.
