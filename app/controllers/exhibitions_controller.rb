@@ -15,10 +15,30 @@ class ExhibitionsController < ApplicationController
   def show
   end
 
+  def edit
+    @exhibition = Exhibition.find(params[:id])
+  end
+
+  def update
+    @exhibition = Exhibition.find(params[:id])
+    @exhibition.update(exhibition_params)
+
+    # no need for app/views/exhibitions/update.html.erb
+    redirect_to exhibition_path(@exhibition)
+  end
+
+  def destroy
+    @exhibition = Exhibition.find(params[:id])
+    @exhibition.destroy
+
+    # no need for app/views/exhibitions/destroy.html.erb
+    redirect_to exhibitions_path
+  end
+
   private
 
   def find_exhibition
-    @article = Article.find(params[:id])
+    @exhibition = Exhibition.find(params[:id])
   end
 
   def article_params

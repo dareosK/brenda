@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :new]
+  before_action :find_article, only: [:show, :new, :create, :edit, :update]
 
   def new
   end
@@ -13,6 +13,24 @@ class ArticlesController < ApplicationController
 
     # no need for app/views/articles/create.html.erb
     redirect_to article_path(@article)
+  end
+
+  def edit
+  end
+
+  def update
+    @article.update(article_params)
+
+    # no need for app/views/articles/update.html.erb
+    redirect_to article_path(@article)
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    # no need for app/views/articles/destroy.html.erb
+    redirect_to articles_path
   end
 
   private
