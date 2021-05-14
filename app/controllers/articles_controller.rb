@@ -11,8 +11,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.save!
-    if @article.save
+    if @article.save!
       redirect_to article_path(@article)
     else
       render :new
@@ -24,9 +23,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update(article_params)
-
-    # no need for app/views/articles/update.html.erb
-    redirect_to article_path(@article)
+    if @article.save!
+      redirect_to article_path(@article)
+    else
+      render :new
+    end
   end
 
   def destroy
