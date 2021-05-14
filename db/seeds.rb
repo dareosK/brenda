@@ -42,7 +42,7 @@ puts "======📝 Creating Articles"
 5.times do
   Article.create(
     title: Faker::Quote.yoda,
-    body: (Faker::Lorem.paragraphs(number: 360)).join,
+    rich_body: (Faker::Lorem.paragraphs(number: 360)).join,
     tagline: Faker::Quotes::Shakespeare.as_you_like_it_quote,
     date: Faker::Date.between(from: '2020-09-23', to: '2021-04-25'),
     author: Faker::Name.name_with_middle,

@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :new, :create, :edit, :update]
+  before_action :find_article, only: [:show, :edit, :update]
 
   def new
+    @article = Article.new
   end
 
   def show
@@ -9,10 +10,13 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.save
-
-    # no need for app/views/articles/create.html.erb
-    redirect_to article_path(@article)
+    @article.user = current_user
+    @article.save!
+    if @article.save
+      redirect_to article_path(@article)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -40,6 +44,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :body, :tagline, :date, :author, :photo)
+    params.require(:article).permit(:title, :body, :tagline, :date, :author, :rich_body, :photo)
   end
 end
