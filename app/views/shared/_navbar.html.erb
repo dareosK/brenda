@@ -1,20 +1,41 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-main px-3">
-  <%= link_to "/", class: "navbar-brand text-bold" do %>
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-main px-3">
+  <#%= link_to "/", class: "navbar-brand text-bold" do %>
     BRENDA
-    <% end %>
+    <#% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "WORK", work_path, class: "nav-link text-bold" %>
+        <#%= link_to "WORK", work_path, class: "nav-link text-bold" %>
+      </li>
+      <li class="nav-item">
         <span class="align-item-center">•</span>
-        <%= link_to "ABOUT", new_user_session_path, class: "nav-link text-bold" %>
+      </li>
+      <li class="nav-item">
+        <#%= link_to "ABOUT", new_user_session_path, class: "nav-link text-bold" %>
+      </li>
+      <li class="nav-item">
+        <#% if user_signed_in? && current_user.avatar.attached?%>
+          <#%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+        <#% end %>
       </li>
     </ul>
   </div>
+</div> -->
+
+<div class="navbar-main">
+  <%= link_to "/", class: "text-bold navigation-item cheating " do %>
+    BRENDA
+  <% end %>
+
+  <div class="navigation-items align-item-center">
+    <%= link_to "WORK", work_path, class: "text-bold cheating " %>
+    <span class="align-item-center text-bold cheating ">•</span>
+    <%= link_to "ABOUT", new_user_session_path, class: "text-bold cheating " %>
+    <span class="align-item-center text-bold cheating ">•</span>
+    <% if user_signed_in? && current_user.avatar.attached?%>
+      <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+    <% end %>
+  </div>
+
 </div>

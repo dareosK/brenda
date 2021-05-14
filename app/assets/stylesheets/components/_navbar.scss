@@ -1,34 +1,35 @@
 .navbar-main {
+  display: flex;
   justify-content: space-between;
   background-color: white !important;
   position: sticky;
   top: 0;
   border-bottom: 1px solid $brand;
   z-index: 100;
-}
-
-.navbar-main .navbar-collapse {
-  flex-grow: 0;
+  padding: 8px 16px;
+  // No clue why these don't work. cheated in line 34
+  // align-items: center;
+  // text-align:center;
 }
 
 .text-bold {
   font-weight: bold;
+  margin-right: 8px;
+  font-size: 1.125rem;
   text-shadow: 1px 1px 3px rgba(black, 0.1);
-}
-
-// .navbar-main .navbar-brand img {
-//   width: 40px;
-// }
-.navbar-brand {
-  color: $brand !important;
 }
 
 .nav-link {
   color: $brand !important;
 }
 
-.nav-item {
+.navigation-items {
   display: flex;
   align-items: center;
+  text-align: center;
   color: $brand !important;
+}
+
+.cheating {
+  margin-top: 8px;
 }

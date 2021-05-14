@@ -1,11 +1,19 @@
-<h1><%= @user.email %></h1>
-<br>
-<br>
-<% @articles.each do |article| %>
-  <h1><%= article.title %></h1>
-<% end %>
-<br>
-<br>
-<% @exhibitions.each do |exhibition| %>
-  <h1><%= exhibition.title %></h1>
-<% end %>
+<div class="container-main margin-from-navbar">
+  <h1><strong><%= @user.name %> <%= @user.surname %></strong></h1>
+  <br>
+  <br>
+  <h2>Articles</h2>
+  <ol>
+    <% @articles.each do |article| %>
+      <li><%= article.title %></li>
+    <% end %>
+  </ol>
+  <br>
+  <br>
+  <h2>Exhibitions</h2>
+  <ol>
+    <% @exhibitions.each do |exhibition| %>
+      <li><%= exhibition.title %></li>
+    <% end %>
+  </ol>
+</div>

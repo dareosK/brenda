@@ -21,14 +21,24 @@ puts "======👨‍🦰👳‍♀️ Creating Users"
 one = User.create!(
     email: "one@mail.com",
     password: "123456",
+    name: "Regina",
+    surname: "Falangie",
+    instagram: "@mrPotatoHead",
+    about: "Regina Falangie is a french art critic and curator living and working in Paris, France. His poetic paintings, sculptures and installations reference weaving and architecture, reminding us of the origins of culture in crafting and the interconnectedness of all things, from single threads to the multiverse."
   )
+avatar_img_one = URI.open('https://media-exp1.licdn.com/dms/image/C4D03AQHPrW5xL5ScQQ/profile-displayphoto-shrink_800_800/0/1598974575465?e=1626307200&v=beta&t=BYwId7mTp4SRyit1B7RtWZ6Zp4rNcDgcr7Lc1jP_5Gk')
+one.avatar.attach(io: avatar_img_one, filename: 'nes.png', content_type: 'image/png')
 
 puts "User 👨‍🦰 'one' Created"
 
 two = User.create!(
   email: "two@mail.com",
   password: "123456",
-  )
+  name: "Patrick",
+  surname: "Frocksucka",
+  instagram: "@SuckaFrock",
+  about: "Patrick Frocksucka is a peruvian art critic and curator living and working in Paris, France. His poetic paintings, sculptures and installations reference weaving and architecture, reminding us of the origins of culture in crafting and the interconnectedness of all things, from single threads to the multiverse."
+)
 
 puts "User 👳‍♀'two' Created"
 
