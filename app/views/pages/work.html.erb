@@ -1,25 +1,29 @@
-<div class="container-main container-center">
-  <div class="works-grid">
-    <div class="grid-writings">
-      <h2 class="text-stroke works-text">WRITINGS</h2>
-      <ul style="padding: 0">
-        <% @articles.each do |article| %>
-        <p style="margin: 0;"><%= article.date.strftime("%Y")  %> - <span><%= article.author  %></span></p>
-        <li style="margin-bottom: 8px; list-style: none;"><strong><%= link_to article.title, article_path(article) %></strong></li>
-        <% end %>
-      </ul>
+<div class="container-main">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="grid-writings">
+        <h2 class="text-stroke works-text">WRITINGS</h2>
+        <ul style="padding: 0">
+          <% @articles.each do |article| %>
+          <p style="margin: 0;"><%= article.date.strftime("%Y")  %> - <span><%= article.author  %></span></p>
+          <li style="margin-bottom: 8px; list-style: none;"><strong><%= link_to article.title, article_path(article) %></strong></li>
+          <% end %>
+        </ul>
 
+      </div>
     </div>
-    <div class="grid-projects">
-      <h2 class="text-stroke works-text">EXHIBITIONS</h2>
-      <ul style="padding: 0">
-        <% @exhibitions.each do |exhibition| %>
-        link_to
-        <span><%= exhibition.start_date.strftime("%d of %B")  %> - <%= exhibition.end_date.strftime("%d of %B, %Y")  %></span>
-        <li style="margin-bottom: 8px; list-style: none;"><strong><%= link_to exhibition.title, exhibition_path(exhibition) %></strong> by <%= exhibition.curated_by %></li>
-        <% end %>
-      </ul>
+    <div class="col-12 col-lg-6">
+      <div class="grid-projects">
+        <h2 class="text-stroke works-text">EXHIBITIONS</h2>
+        <ul style="padding: 0">
+          <% @exhibitions.each do |exhibition| %>
+          link_to
+          <span><%= exhibition.start_date.strftime("%d of %B")  %> - <%= exhibition.end_date.strftime("%d of %B, %Y")  %></span>
+          <li style="margin-bottom: 8px; list-style: none;"><strong><%= link_to exhibition.title, exhibition_path(exhibition) %></strong> by <%= exhibition.curated_by %></li>
+          <% end %>
+        </ul>
 
+      </div>
     </div>
   </div>
 </div>
