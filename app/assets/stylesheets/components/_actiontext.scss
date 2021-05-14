@@ -34,3 +34,17 @@
     }
   }
 }
+
+.trix-content {
+  width: 60%;
+  color: grey;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: justify;
+  word-spacing: 0.5rem;
+}
+
+.trix-content ol, ul {
+  word-spacing: 0;
+}

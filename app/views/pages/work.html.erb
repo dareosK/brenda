@@ -17,8 +17,7 @@
         <h2 class="text-stroke works-text">EXHIBITIONS</h2>
         <ul style="padding: 0">
           <% @exhibitions.each do |exhibition| %>
-          link_to
-          <span><%= exhibition.start_date.strftime("%d of %B")  %> - <%= exhibition.end_date.strftime("%d of %B, %Y")  %></span>
+          <span><%= exhibition.start_date.strftime("%d of %B")  %> - <%= exhibition.end_date.strftime("%d of %B %Y")  %></span>
           <li style="margin-bottom: 8px; list-style: none;"><strong><%= link_to exhibition.title, exhibition_path(exhibition) %></strong> by <%= exhibition.curated_by %></li>
           <% end %>
         </ul>

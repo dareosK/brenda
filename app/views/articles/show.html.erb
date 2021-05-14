@@ -4,8 +4,8 @@
     <div class="article-header">
 
       <div class="header-info">
-        <p class="header-author">ANTOINE CHAMPENOIS</p>
-        <p class="header-date">10 March 2021</p>
+        <p class="header-author"><%= @article.author.upcase %></p>
+        <p class="header-date"><%= @article.date.strftime("%d of %B %Y") %></p>
       </div>
 
       <div class="header-title">
@@ -15,7 +15,11 @@
 
     </div>
 
-    <img src="https://source.unsplash.com/random" alt="">
+    <% if @article.photo.attached? %>
+      <%= cl_image_tag @article.photo.key %>
+    <% else %>
+      <img src="https://source.unsplash.com/random" alt="">
+    <% end %>
 
   </div>
 

@@ -8,15 +8,16 @@
 .text-center {
   justify-content: center;
   align-items: center;
-  margin-top: -82px;
+  margin-top: -16px;
 }
 
 h1.homepage-text {
-  font-size: 400px !important;
+  font-size: 300px !important;
   font-weight: bold;
 }
 
 .text-stroke {
   -webkit-text-stroke: 1px $brand;
   color: white;
+  // background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(255,255,255,1) 52%);
 }
