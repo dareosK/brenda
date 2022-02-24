@@ -10,10 +10,13 @@ class ExhibitionsController < ApplicationController
 
   def create
     @exhibition = Exhibition.new(exhibition_params)
-    @exhibition.save
-
+    @exhibition.user = current_user
+    if @exhibition.save!
     # no need for app/views/exhibitions/create.html.erb
     redirect_to exhibition_path(@exhibition)
+    else
+      render "pages/dashboard"
+    end
   end
 
   def edit
@@ -42,7 +45,7 @@ class ExhibitionsController < ApplicationController
     @exhibition = Exhibition.find(params[:id])
   end
 
-  def article_params
-    params.require(:exhibition).permit(:title, :artists, :institution_name, :institution_address, :curated_by, :test, :start_date, :end_date, photos: [])
+  def exhibition_params
+    params.require(:exhibition).permit(:title, :artists, :institution_name, :institution_address, :curated_by, :text, :start_date, :end_date, photos: [])
   end
 end

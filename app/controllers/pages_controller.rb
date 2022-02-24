@@ -27,5 +27,8 @@ class PagesController < ApplicationController
     @user = current_user
     @articles = Article.all.where(user: current_user)
     @exhibitions = Exhibition.all.where(user: current_user)
+    # In case you want to add a "create article/create exhibition" functionality
+    @article = Article.new
+    @exhibition = Exhibition.new
   end
 end
