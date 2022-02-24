@@ -34,7 +34,9 @@
     <%= link_to "ABOUT", about_path, class: "text-bold cheating " %>
     <span class="align-item-center text-bold cheating ">•</span>
     <% if user_signed_in? && current_user.avatar.attached?%>
-      <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+      <%= link_to dashboard_path do %>
+        <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+      <% end %>
     <% end %>
   </div>
 
