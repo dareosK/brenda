@@ -31,7 +31,7 @@
   <div class="navigation-items align-item-center">
     <%= link_to "WORK", work_path, class: "text-bold cheating " %>
     <span class="align-item-center text-bold cheating ">•</span>
-    <%= link_to "ABOUT", new_user_session_path, class: "text-bold cheating " %>
+    <%= link_to "ABOUT", about_path, class: "text-bold cheating " %>
     <span class="align-item-center text-bold cheating ">•</span>
     <% if user_signed_in? && current_user.avatar.attached?%>
       <%= cl_image_tag current_user.avatar.key, class: "avatar" %>

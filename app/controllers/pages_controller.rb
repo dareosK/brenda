@@ -20,6 +20,9 @@ class PagesController < ApplicationController
     @exhibitions = Exhibition.all
   end
 
+  def about
+  end
+
   def dashboard
     @user = current_user
     @articles = Article.all.where(user: current_user)
