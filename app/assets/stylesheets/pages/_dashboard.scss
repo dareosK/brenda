@@ -1,0 +1,42 @@
+.dashboard-flex {
+  display: flex;
+}
+
+.articles-exhibitions {
+  padding-right: 16px;
+}
+
+.new-articles-exhibitions {
+  width: 40%;
+  // padding-left: 32px;
+  // padding-right: 16px;
+}
+
+.dashboard-color {
+  color: black !important;
+}
+
+.dashboard-button {
+  background-color: black;
+  border-radius: 10px;
+
+  > input {
+    background-color: transparent;
+    border: none;
+    color: white;
+
+  }
+
+  &:hover {
+    background-color: gray;
+  }
+}
+
+.trix-content {
+  margin-bottom: 16px;
+}
+
+.ml-1, .mx-1 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
