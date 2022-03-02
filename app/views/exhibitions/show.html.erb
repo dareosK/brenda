@@ -1,0 +1,40 @@
+<div class="container-main margin-from-navbar">
+
+  <div class="article-top">
+    <div class="article-header">
+
+      <div class="header-info">
+        <p class="header-author"><%= @exhibition.curated_by.upcase %></p>
+        <p class="header-date"><%= @exhibition.start_date.strftime("%d of %B %Y") %></p>
+      </div>
+
+      <div class="header-title">
+        <h1><%= @exhibition.title %></h1>
+        <p style="color: grey;"><%= @exhibition.institution_name %></p>
+      </div>
+
+    </div>
+
+      <img src="https://source.unsplash.com/random" alt="">
+
+
+  </div>
+
+
+    <p id="exhibition-text"><%= @exhibition.text %></p>
+
+    <div class="masonry-grid">
+    <% @exhibition.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, class: "grid-item"%>
+    <% end %>
+  </div>
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+  var elem = document.querySelector('.masonry-grid');
+  var msnry = new Masonry( elem, {
+    // options
+    itemSelector: '.grid-item'
+  });
+</script>

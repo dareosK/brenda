@@ -1,7 +1,14 @@
 .avatar {
   width: 40px;
-  border-radius: 50%;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  filter: grayscale(1) contrast(1.5);
 }
+
+.avatar:hover{
+  filter: none;
+}
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
