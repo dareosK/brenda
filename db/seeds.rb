@@ -50,14 +50,16 @@ puts "======Users created"
 
 puts "======📝 Creating Articles"
 5.times do
-  Article.create(
+  article = Article.create(
     title: Faker::Quote.yoda,
     rich_body: (Faker::Lorem.paragraphs(number: 360)).join,
     tagline: Faker::Quotes::Shakespeare.as_you_like_it_quote,
     date: Faker::Date.between(from: '2020-09-23', to: '2021-04-25'),
     author: Faker::Name.name_with_middle,
-    user: one,
+    user: one
     )
+  article_img = URI.open('https://source.unsplash.com/random')
+  article.photo.attach(io: article_img, filename: 'random.png', content_type: 'image/png')
 end
 puts "======5 Articles created"
 
@@ -71,7 +73,7 @@ puts "======🖼 Creating 5 Exhibitions"
     institution_name: "Galerie du Lendemain",
     institution_address: "#{Faker::Address.street_name}, #{Faker::Address.city}",
     curated_by: "Antoine Champenois",
-    text: (Faker::Lorem.paragraphs(number: 200)).join,
+    text: (Faker::Lorem.paragraphs(number: 20)).join,
     start_date: Faker::Date.between(from: '2020-09-23', to: '2020-09-25'),
     end_date: Faker::Date.between(from: '2020-10-10', to: '2020-10-15'),
     )
