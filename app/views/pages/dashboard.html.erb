@@ -2,42 +2,51 @@
   <h2>Welcome, <strong><%= @user.name %>!</strong></h1>
   <br>
   <br>
-  <div class="dashboard-flex">
-    <div class="articles-exhibitions">
-      <h3>your articles</h3>
-      <ol>
-        <% @articles.each do |article| %>
-          <li><%= article.title %></li>
+  <div class="">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active link-font" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color:black;">Your Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-font" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="color:black">Your Exhibitions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-font" id="newarticle-tab" data-toggle="tab" href="#newarticle" role="tab" aria-controls="newarticle" aria-selected="false" style="color:black">Add an article</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-font" id="newexhibition-tab" data-toggle="tab" href="#newexhibition" role="tab" aria-controls="newexhibition" aria-selected="false" style="color:black">Add an Exhibition</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <ol>
+          <% @articles.each do |article| %>
+            <li><%= article.title %></li>
+          <% end %>
+        </ol>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <ol>
+          <% @exhibitions.each do |exhibition| %>
+            <li><%= exhibition.title %></li>
+          <% end %>
+        </ol>
+      </div>
+      <div class="tab-pane fade" id="newarticle" role="tabpanel" aria-labelledby="newarticle-tab">
+        <%= simple_form_for(@article) do |f| %>
+          <%= f.input :author %>
+          <%= f.input :title %>
+        <!--   <%#= f.input :body %> -->
+          <%= f.input :tagline %>
+          <%= f.rich_text_area :rich_body %>
+          <%= f.input :date, html5: true  %>
+          <%= f.input :photo, as: :file %>
+          <div class="btn w-100 dashboard-button">
+            <%= f.submit %>
+          </div>
         <% end %>
-      </ol>
-      <br>
-      <br>
-      <h3>your exhibitions</h3>
-      <ol>
-        <% @exhibitions.each do |exhibition| %>
-          <li><%= exhibition.title %></li>
-        <% end %>
-      </ol>
-    </div>
-
-    <div class="new-articles-exhibitions">
-      <h3>New Article</h3>
-      <%= simple_form_for(@article) do |f| %>
-        <%= f.input :author %>
-        <%= f.input :title %>
-      <!--   <%#= f.input :body %> -->
-        <%= f.input :tagline %>
-        <%= f.rich_text_area :rich_body %>
-        <%= f.input :date, html5: true  %>
-        <%= f.input :photo, as: :file %>
-        <div class="btn w-100 dashboard-button">
-          <%= f.submit %>
-        </div>
-      <% end %>
-
-      <br>
-      <br>
-      <h3>New Exhibition</h3>
+      </div>
+      <div class="tab-pane fade" id="newexhibition" role="tabpanel" aria-labelledby="newexhibition-tab">
       <%= simple_form_for(@exhibition) do |f| %>
         <%= f.input :title %>
         <%= f.input :artists %>
@@ -57,5 +66,4 @@
     </div>
   </div>
 </div>
-
 

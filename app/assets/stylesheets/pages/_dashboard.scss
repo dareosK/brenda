@@ -2,6 +2,20 @@
   display: flex;
 }
 
+.nav-tabs {
+  margin-bottom: 1rem !important;
+}
+
+.nav-link {
+  background-color: transparent !important;
+  // color: black !important;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: rgba(245, 245, 245, 0.5) !important;
+  border-color: rgba(240, 240, 240, 0.5) rgba(240, 240, 240, 0.5) rgba(240, 240, 240, 0.5);
+}
+
 .articles-exhibitions {
   padding-right: 16px;
 }
