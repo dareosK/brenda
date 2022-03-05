@@ -4,13 +4,14 @@
     <div class="article-header">
 
       <div class="header-info">
-        <p class="header-author"><%= @exhibition.curated_by.upcase %></p>
-        <p class="header-date"><%= @exhibition.start_date.strftime("%d of %B %Y") %></p>
+        <p class="header-author"><%= @exhibition.institution_name.upcase %></p>
+        <p class="header-date"><%= @exhibition.start_date.strftime("%-d.%B.%y") %> to <%= @exhibition.end_date.strftime("%-d.%B.%y") %></p>
       </div>
 
       <div class="header-title">
         <h1><%= @exhibition.title %></h1>
-        <p style="color: grey;"><%= @exhibition.institution_name %></p>
+        <p style="color: grey;"><%= @exhibition.artists %></p>
+        <p style="color: grey;">curated by <%= @exhibition.curated_by %></p>
       </div>
 
     </div>
