@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_182810) do
+ActiveRecord::Schema.define(version: 2022_03_05_170848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_182810) do
 
   create_table "exhibitions", force: :cascade do |t|
     t.string "title"
-    t.text "artists"
+    t.string "artists"
     t.string "institution_name"
     t.string "institution_address"
     t.string "curated_by"

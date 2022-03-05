@@ -5,16 +5,16 @@
   <div class="">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active link-font" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" style="color:black;">Your Articles</a>
+        <a class="nav-link active link-font" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Your Articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link link-font" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="color:black">Your Exhibitions</a>
+        <a class="nav-link link-font" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Your Exhibitions</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link link-font" id="newarticle-tab" data-toggle="tab" href="#newarticle" role="tab" aria-controls="newarticle" aria-selected="false" style="color:black">Add an article</a>
+        <a class="nav-link link-font" id="newarticle-tab" data-toggle="tab" href="#newarticle" role="tab" aria-controls="newarticle" aria-selected="false">New Article</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link link-font" id="newexhibition-tab" data-toggle="tab" href="#newexhibition" role="tab" aria-controls="newexhibition" aria-selected="false" style="color:black">Add an Exhibition</a>
+        <a class="nav-link link-font" id="newexhibition-tab" data-toggle="tab" href="#newexhibition" role="tab" aria-controls="newexhibition" aria-selected="false">New Exhibition</a>
       </li>
     </ul>
     <div class="container-60">
@@ -56,13 +56,13 @@
         </div>
         <div class="tab-pane fade" id="newarticle" role="tabpanel" aria-labelledby="newarticle-tab">
           <%= simple_form_for(@article) do |f| %>
-            <%= f.input :title %>
-            <%= f.input :author %>
+            <%= f.input :title, label: false, placeholder: "Title" %>
+            <%= f.input :author, label: false, placeholder: "Author" %>
           <!--   <%#= f.input :body %> -->
-            <%= f.input :tagline %>
+            <%= f.input :tagline, label: false, placeholder: "Tagline" %>
             <%= f.rich_text_area :rich_body %>
-            <%= f.input :date, html5: true  %>
-            <%= f.input :photo, as: :file %>
+            <%= f.input :date, html5: true, label: false  %>
+            <%= f.input :photo, as: :file, label: :photo %>
             <div class="btn w-100 dashboard-button">
               <%= f.submit %>
             </div>
@@ -70,11 +70,11 @@
         </div>
         <div class="tab-pane fade" id="newexhibition" role="tabpanel" aria-labelledby="newexhibition-tab">
         <%= simple_form_for(@exhibition) do |f| %>
-          <%= f.input :title %>
-          <%= f.input :artists %>
-          <%= f.input :institution_name %>
-          <%= f.input :institution_address %>
-          <%= f.input :curated_by %>
+          <%= f.input :title, label: false, placeholder: "Title" %>
+          <%= f.input :artists, label: false, placeholder: "Artists" %>
+          <%= f.input :institution_name, label: false, placeholder: "Institution" %>
+          <%= f.input :institution_address, label: false, placeholder: "Address" %>
+          <%= f.input :curated_by, label: false, placeholder: "Curated by" %>
           <%= f.input :text %>
           <div class="d-flex">
             <%= f.input :start_date, html5: true  %>
