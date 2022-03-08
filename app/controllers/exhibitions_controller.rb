@@ -1,7 +1,9 @@
 class ExhibitionsController < ApplicationController
-  before_action :find_exhibition, only: [:show]
+  # Don't need this cause of friendly Id URLS but maybe in the future you will.
+  # before_action :find_exhibition, only: [:show]
 
   def show
+    @exhibition = Exhibition.friendly.find(params[:id])
   end
 
   def new

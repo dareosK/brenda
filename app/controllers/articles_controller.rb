@@ -1,11 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, only: [:show, :edit, :update]
+  before_action :find_article, only: [ :edit, :update]
 
   def new
     @article = Article.new
   end
 
   def show
+    @article = Article.friendly.find(params[:id])
   end
 
   def create
