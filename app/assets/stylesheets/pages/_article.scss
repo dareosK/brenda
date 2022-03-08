@@ -15,8 +15,13 @@
   // box-shadow: -2px 2px 100px 0px rgba(0,0,0,0.1)
 }
 
+.header-title {
+  flex-grow: 1;
+}
+
 .article-header {
   display: flex;
+  flex-grow: 1;
   align-items: center;
   text-align: center;
   justify-content: space-between;
@@ -31,6 +36,10 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.container-60 {
+  width: 60% !important;
 }
 
 .header-author {

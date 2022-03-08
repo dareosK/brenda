@@ -48,3 +48,15 @@
 .trix-content ol, ul {
   word-spacing: 0;
 }
+
+#article_rich_body, #exhibition_text {
+  min-height: 600px;
+}
+
+// PLAY WITH THE FORMS' BORDERS
+// .form-control {
+//   border-right: none !important;
+//   border-left: none !important;
+//   border-top: none !important;
+//   border-bottom: 3px solid black !important;
+// }
